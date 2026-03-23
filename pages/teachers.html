@@ -4,6 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Викладачі кафедри</title>
+    <style>
+    .competency-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+    }
+    
+    .competency-table caption {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #e8f1fd;
+        color: #5b7a9a;
+        border-radius: 8px;
+    }
+    
+    .competency-table th, .competency-table td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .competency-table th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+    
+    .competency-table td {
+        background-color: #ffffff;
+    }
+    
+    .position-header {
+        background-color: #f9f9f9;
+        font-weight: bold;
+    }
+    
+    footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #ccc;
+    }
+</style>
 </head>
 <body>
     <header>
@@ -13,13 +59,16 @@
                 <li><a href="about.html">Про кафедру</a></li>
                 <li><a href="teachers.html">Викладачі</a></li>
                 <li><a href="partners.html">Партнери</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="calendar.html">Календар</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Наші викладачі</h1>
         <section class="head">
-            <h2>Завідувач кафедри</h2>
+            <h2><cite>Завідувач кафедри</cite></h2>
             <article>
                 <h3>Петренко Іван Петрович</h3>
                 <p><strong>Посада:</strong> Завідувач кафедри, доктор технічних наук, професор</p>
@@ -29,13 +78,104 @@
             </article>
         </section>
         <section class="professors">
-            <h2>Викладачі кафедри</h2> 
+            <h2><cite>Викладачі кафедри</cite></h2> 
             <article>
                 <h3>Коваленко Олена Сергіївна</h3>
                 <p><strong>Посада:</strong> Доцент, кандидат технічних наук</p>
                 <p><strong>Дисципліни:</strong> JavaScript, React, Node.js</p>
                 <p><strong>Email:</strong> <span style="color: blue;">o.kovalenko@kafedra.ua</span></p>
             </article>
+        </section>
+                <section>
+            <h2>Матриця компетенцій співробітників кафедри</h2>
+            <p>Рівень володіння технологіями (шкала від 1 до 5)</p>
+            <table class="competency-table">
+                <caption>Матриця компетенцій викладачів кафедри ІТ</caption>          
+                <thead>
+                     <tr>
+                        <th rowspan="3" style="width: 180px;">ПІБ / Посада</th>
+                        <th colspan="6">Frontend</th>
+                        <th colspan="6">Backend</th>
+                        <th colspan="3">Database</th>
+                    </tr>
+                    
+                    <tr>
+                        <th colspan="2">HTML/CSS</th>
+                        <th colspan="2">JavaScript</th>
+                        <th colspan="2">React</th>
+                        <th colspan="2">Node.js</th>
+                        <th colspan="2">Python</th>
+                        <th colspan="2">Java</th>
+                        <th>SQL</th>
+                        <th>MongoDB</th>
+                        <th>Redis</th>
+                    </tr>
+
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                        <th>JS</th>
+                        <th>TS</th>
+                        <th>React</th>
+                        <th>Redux</th>
+                        <th>Express</th>
+                        <th>NestJS</th>
+                        <th>Django</th>
+                        <th>Flask</th>
+                        <th>Spring</th>
+                        <th>Hibernate</th>
+                        <th>MySQL</th>
+                        <th>MongoDB</th>
+                        <th>Redis</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr>
+                        <td rowspan="1" class="position-header"><strong>Завідувач</strong></td>
+                        <td colspan="15" class="position-header">Петренко Іван Петрович</td>
+                    </tr>
+                    <tr>
+                        <td>Петренко Іван Петрович</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-5">5</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-3">3</td>
+                        <td class="level-5">5</td>
+                        <td class="level-5">5</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-3">3</td>
+                        <td class="level-4">4</td>
+                        <td class="level-5">5</td>
+                        <td class="level-3">3</td>
+                        <td class="level-3">3</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1" class="position-header"><strong>Доцент</strong></td>
+                        <td colspan="15" class="position-header">Коваленко Олена Сергіївна</td>
+                    </tr>
+                    <tr>
+                        <td>Коваленко Олена Сергіївна</td>
+                        <td class="level-5">5</td>
+                        <td class="level-5">5</td>
+                        <td class="level-5">5</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-4">4</td>
+                        <td class="level-3">3</td>
+                        <td class="level-3">3</td>
+                        <td class="level-3">3</td>
+                        <td class="level-2">2</td>
+                        <td class="level-5">5</td>
+                        <td class="level-3">3</td>
+                        <td class="level-2">2</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
     <footer>
