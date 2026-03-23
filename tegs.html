@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дослідження тегів</title>
+    <title>Семантичні теги</title>
 </head>
 <body>
-    <blockquote cite="https://example.com">
-    <p>Освіта — це найкращий спосіб змінити світ. Інформаційні технології відкривають безмежні можливості для розвитку.</p>
-    <footer>— Іван Петренко, завідувач кафедри</footer>
-</blockquote>
-<p>Використайте команду <code>console.log('Hello World');</code></p>
-<pre>
-        я       
-    люблю всіх
-     тваринок
-</pre>
-<p>Стаття <cite>Сучасні тенденції Web-розробки</cite> опублікована в науковому журналі кафедри.</p>
-<address>
-    <p>м. Харків, вул. Депутатська, 14</p>
-    <p>Телефон: <a href="tel:+380683315128">+380 (68) 331-51-28</a></p>
-    <p>Email: <a href="mailto:Anastasiia.Yaremenko@infiz.khpi.edu.ua">Anastasiia.Yaremenko@infiz.khpi.edu.ua</a></p>
-</address>
+    <header>
+        <h1>Дослідження семантичних тегів</h1>
+    </header>
+    <main>
+        <section class="example">
+            <h2>1. Тег &lt;mark&gt;</h2>
+            <p><strong>Призначення:</strong> Використовується для виділення тексту (маркування). Зазвичай відображається з жовтим фоном.</p>
+            
+            <h3>Приклад:</h3>
+            <p>Це звичайний текст, а <mark>тут ні</mark>.</p>
+        </section>
+
+        <section class="example">
+            <h2>2. Тег &lt;output&gt;</h2>
+            <p><strong>Призначення:</strong> Використовується для відображення результату обчислення або дії користувача.</p>
+            
+            <h3>Приклад:</h3>
+            <form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+                <label>Число 1: <input type="number" id="a" name="a" value="10"></label><br>
+                <label>Число 2: <input type="number" id="b" name="b" value="5"></label><br>
+                <label>Результат додавання: <output name="result" for="a b">15</output></label>
+            </form>
+        </section>
+
+        <section class="example">
+            <h2>3. Тег &lt;progress&gt;</h2>
+            <p><strong>Призначення:</strong> Відображає прогрес виконання завдання (індикатор виконання).</p>
+            
+            <h3>Приклад:</h3>
+            <p>Завантаження файлу: <progress value="70" max="100">70%</progress> 70%</p>
+            <p>Виконання курсу: <progress value="45" max="100">45%</progress> 45%</p>
+            <p>Невизначений прогрес: <progress max="100"></progress></p>
+        </section>
+
+        <section class="example">
+            <h2>4. Тег &lt;meter&gt;</h2>
+            <p><strong>Призначення:</strong> Відображає скалярне значення в заданому діапазоні (наприклад, рівень заряду, оцінки, температуру).</p>
+            
+            <h3>Приклад:</h3>
+            <p>Рівень заряду батареї: <meter value="0.8" min="0" max="1">80%</meter> 80%</p>
+            <p>Заповненість диска: <meter value="45" min="0" max="100" low="30" high="80">45%</meter> 45%</p>
+        </section>
+
+        <section class="example">
+            <h2>5. Тег &lt;wbr&gt;</h2>
+            <p><strong>Призначення:</strong> Вказує місце, де можна перенести довге слово, якщо воно не вміщується в рядок.</p>
+            
+            <h3>Приклад:</h3>
+            <p>URL-адреса: https://www.<wbr>verylongdomainname<wbr>.com.ua/дуже<wbr>довгий<wbr>шлях</p>
+            <p>Хімічна формула: метил<wbr>пропеніл<wbr>дигідрокси<wbr>цинаменіл<wbr>акридова кислота</p>
+        </section>
 </body>
 </html>
