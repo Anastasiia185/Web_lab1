@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація студента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        div {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Реєстрація студента</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="about.html">Про кафедру</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="calendar.html">Календар</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="partners.html">Партнери</a></li>
+                <li><a href="teachers.html">Викладачі</a></li>
+                <li><a href="registration.html">Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Реєстрація студента</h2>
+        <form action="/register" method="POST">
+            <div>
+                <label for="lastname">Прізвище:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div>
+                <label for="firstname">Ім'я:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div>
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="pwd">Пароль (мінімум 8 символів):</label>
+                <input type="password" id="pwd" name="password" minlength="8" required>
+            </div>
+            <div>
+                <label for="dob">Дата народження:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <fieldset>
+                <legend>Стать:</legend>
+                <input type="radio" id="gender_m" name="gender" value="male">
+                <label for="gender_m">Чоловіча</label>
+                <input type="radio" id="gender_f" name="gender" value="female">
+                <label for="gender_f">Жіноча</label>
+            </fieldset>
+            <div>
+                <label for="faculty">Факультет:</label>
+                <select id="faculty" name="faculty" required>
+                    <option value="">-- Оберіть факультет --</option>
+                    <option value="kn">Комп'ютерні науки</option>
+                    <option value="ipz">Інженерія програмного забезпечення</option>
+                </select>
+            </div>
+            <div>
+                <label for="course">Курс:</label>
+                <select id="course" name="course">
+                    <option value="">-- Оберіть курс --</option>
+                    <option value="1">1 курс</option>
+                    <option value="2">2 курс</option>
+                    <option value="3">3 курс</option>
+                    <option value="4">4 курс</option>
+                </select>
+            </div>
+            <div>
+                <label for="bio">Додаткова інформація:</label><br>
+                <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+            </div>
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Я даю згоду на обробку персональних даних</label>
+            </div>
+            <div>
+                <button type="submit">Зареєструватися</button>
+                <button type="reset">Очистити форму</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Кафедра інформаційних технологій</p>
+    </footer>
+</body>
+</html>
