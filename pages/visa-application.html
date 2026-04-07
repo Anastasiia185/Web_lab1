@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Віза-анкета</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        form {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fefefe;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 12px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        div {
+            margin-bottom: 12px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"], input[type="file"] {
+            width: auto;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+        
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        
+        .hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Віза-анкета</h1>
+        <nav>
+            <ul>
+                <li><a href="../main.html">Головна</a></li>
+                <li><a href="about.html">Про кафедру</a></li>
+                <li><a href="visa-application.html">Віза-анкета</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Анкета для отримання візи</h2>
+        <form action="/visa" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Блок 1. Паспортні дані</legend>
+                <div>
+                    <label for="passport_series">Серія паспорта:</label>
+                    <input type="text" id="passport_series" name="passport_series" 
+                           placeholder="XX" maxlength="2" required>
+                </div>
+                <div>
+                    <label for="passport_number">Номер паспорта:</label>
+                    <input type="text" id="passport_number" name="passport_number" 
+                           placeholder="123456" maxlength="6" required>
+                </div>
+                <div>
+                    <label for="issue_date">Дата видачі:</label>
+                    <input type="date" id="issue_date" name="issue_date" required>
+                </div>
+                <div>
+                    <label for="issued_by">Орган видачі:</label>
+                    <input type="text" id="issued_by" name="issued_by" 
+                           placeholder="Введіть повну назву органу" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Блок 2. Мета поїздки та дати</legend>
+                
+                <div>
+                    <label for="purpose">Мета поїздки:</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">-- Оберіть мету --</option>
+                        <option value="tourism">Туризм</option>
+                        <option value="business">Бізнес</option>
+                        <option value="study">Навчання</option>
+                        <option value="family">Відвідування родичів</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="arrival_date">Дата прибуття:</label>
+                    <input type="date" id="arrival_date" name="arrival_date" required>
+                    <div class="hint">Не можна вибрати дату в минулому</div>
+                </div>
+                <div>
+                    <label for="departure_date">Дата від'їзду:</label>
+                    <input type="date" id="departure_date" name="departure_date" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Блок 3. Фінансове забезпечення</legend>
+                <div>
+                    <label>Джерело доходів:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="income_employment" name="income_source" value="employment">
+                        <label for="income_employment">Працевлаштування</label>
+                        <input type="radio" id="income_business" name="income_source" value="business">
+                        <label for="income_business">Власний бізнес</label>
+                        <input type="radio" id="income_sponsorship" name="income_source" value="sponsorship">
+                        <label for="income_sponsorship">Спонсорство</label>
+                        <input type="radio" id="income_savings" name="income_source" value="savings">
+                        <label for="income_savings">Заощадження</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="bank_statement">Виписка з банку:</label>
+                    <input type="file" id="bank_statement" name="bank_statement" accept=".pdf,.jpg,.png">
+                    <div class="hint">Підтримувані формати: PDF, JPG, PNG (макс. 5 МБ)</div>
+                </div>
+            </fieldset>
+            
+            <div>
+                <button type="submit">Надіслати анкету</button>
+                <button type="reset">Очистити</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Кафедра інформаційних технологій</p>
+    </footer>
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('arrival_date').setAttribute('min', today);
+        document.getElementById('departure_date').setAttribute('min', today);
+        
+        const arrivalInput = document.getElementById('arrival_date');
+        const departureInput = document.getElementById('departure_date');
+        arrivalInput.addEventListener('change', function() {
+            departureInput.setAttribute('min', this.value);
+        });
+        departureInput.addEventListener('change', function() {
+            if (this.value < arrivalInput.value) {
+                alert('Дата від\'їзду не може бути раніше дати прибуття');
+                this.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
