@@ -8,28 +8,39 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Редагування профілю</h2>
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="username">Ім'я користувача</label>
-                <input type="text" id="username" name="username" value=" " required>
-            </div>
-            <div class="form-group">
-                <label for="email">Електронна пошта</label>
-                <input type="email" id="email" name="email" value=" " required>
-            </div>
-            <div class="form-group">
-                <label for="bio">Про себе</label>
-                <textarea id="bio" name="bio" rows="4" placeholder="Розкажіть про себе..."></textarea>
-            </div>
-            <div class="form-group">
-                <label for="new_password">Новий пароль</label>
-                <input type="password" id="new_password" name="new_password" placeholder="Залиште порожнім, якщо не змінюєте">
-            </div>
-            <button type="submit" class="submit-btn">Зберегти зміни</button>
-        </form>
-        <p class="form-footer"><a href="index.html">Вийти з акаунта</a></p>
+    <div style="width: 100%; max-width: 450px; margin: 0 auto;">
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="login.html" class="nav-link">Вхід</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link active">Профіль</a></li>
+                <li class="nav-item"><a href="task.html" class="nav-link">Відгуки</a></li>
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Магазин</a></li>
+            </ul>
+        </nav>
+
+        <div class="form-container">
+            <h2>Редагування профілю</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">Ім'я користувача</label>
+                    <input type="text" id="username" name="username" value=" " required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" name="email" value=" " required>
+                </div>
+                <div class="form-group">
+                    <label for="bio">Про себе</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Розкажіть про себе..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="new_password">Новий пароль</label>
+                    <input type="password" id="new_password" name="new_password" placeholder="Залиште порожнім, якщо не змінюєте">
+                </div>
+                <button type="submit" class="submit-btn">Зберегти зміни</button>
+            </form>
+            <p class="form-footer"><a href="login.html">Вийти з акаунта</a></p>
+        </div>
     </div>
 </body>
 </html>
