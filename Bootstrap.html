@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/Bootstrap.css">
+</head>
+<body>
+<div class="d-flex flex-nowrap position-relative">
+    <aside class="sidebar bg-white border-end p-3" id="sidebarMenu" style="min-height: 100vh; width: 260px;">
+        <div class="d-flex align-items-center mb-4 pt-2">
+            <i class="fas fa-chart-line fs-3 text-primary me-2"></i>
+            <span class="fs-5 fw-semibold">AdminPanel</span>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active bg-primary text-white">
+                    <i class="fas fa-tachometer-alt me-2"></i> Головна
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">
+                    <i class="fas fa-chart-simple me-2"></i> Статистика
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">
+                    <i class="fas fa-box me-2"></i> Замовлення
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">
+                    <i class="fas fa-users me-2"></i> Користувачі
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">
+                    <i class="fas fa-cog me-2"></i> Налаштування
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="small text-muted mt-auto">
+            <i class="fas fa-circle-user me-1"></i> admin@example.com
+        </div>
+    </aside>
+
+    <main class="main-content flex-grow-1 p-3 p-md-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="m-0">Панель керування</h3>
+            <div class="dropdown">
+                <button class="btn btn-light border rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="fas fa-user-circle me-1"></i> Адміністратор
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="macet.html"><i class="fas fa-user me-2"></i>Sushi Bar</a></li>
+                    <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Вихід</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card border-0 shadow-sm h-100 bg-primary bg-opacity-10">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-primary mb-1">Загальний дохід</h6>
+                                <h3 class="mb-0">34 250 ₴</h3>
+                                <small class="text-success"><i class="fas fa-arrow-up"></i> +12.5%</small>
+                            </div>
+                            <i class="fas fa-dollar-sign fs-1 text-primary opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card border-0 shadow-sm h-100 bg-success bg-opacity-10">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-success mb-1">Замовлення</h6>
+                                <h3 class="mb-0">156</h3>
+                                <small class="text-muted">за цей місяць</small>
+                            </div>
+                            <i class="fas fa-shopping-cart fs-1 text-success opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card border-0 shadow-sm h-100 bg-warning bg-opacity-10">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-warning mb-1">Клієнти</h6>
+                                <h3 class="mb-0">1 283</h3>
+                                <small class="text-success"><i class="fas fa-user-plus"></i> +23 нових</small>
+                            </div>
+                            <i class="fas fa-users fs-1 text-warning opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card border-0 shadow-sm h-100 bg-info bg-opacity-10">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-info mb-1">Перегляди</h6>
+                                <h3 class="mb-0">8 942</h3>
+                                <small class="text-danger"><i class="fas fa-chart-line"></i> +5.2%</small>
+                            </div>
+                            <i class="fas fa-eye fs-1 text-info opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white border-0 pt-4 pb-0 px-4">
+                <h5 class="mb-0 fw-bold"><i class="fas fa-truck-fast me-2 text-primary"></i>Останні замовлення</h5>
+                <p class="text-muted small mt-1">Актуальні замовлення клієнтів за останній тиждень</p>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive p-3">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID замовлення</th>
+                                <th>Клієнт</th>
+                                <th>Сума</th>
+                                <th>Статус</th>
+                                <th>Дата</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-1001</td>
+                                <td>Олена Коваленко</td>
+                                <td>2 500 ₴</td>
+                                <td><span class="badge bg-success">Виконано</span></td>
+                                <td>2025-05-02</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1002</td>
+                                <td>Андрій Шевченко</td>
+                                <td>1 280 ₴</td>
+                                <td><span class="badge bg-warning text-dark">В обробці</span></td>
+                                <td>2025-05-02</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1003</td>
+                                <td>Марія Іваненко</td>
+                                <td>4 799 ₴</td>
+                                <td><span class="badge bg-success">Виконано</span></td>
+                                <td>2025-05-01</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1004</td>
+                                <td>Володимир Петренко</td>
+                                <td>990 ₴</td>
+                                <td><span class="badge bg-danger">Скасовано</span></td>
+                                <td>2025-04-30</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1005</td>
+                                <td>Оксана Гнатюк</td>
+                                <td>3 250 ₴</td>
+                                <td><span class="badge bg-info text-white">Доставка</span></td>
+                                <td>2025-04-30</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1006</td>
+                                <td>Ігор Мельник</td>
+                                <td>5 600 ₴</td>
+                                <td><span class="badge bg-success">Виконано</span></td>
+                                <td>2025-04-29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0 text-end pb-3">
+                <a href="#" class="btn btn-sm btn-outline-primary">Переглянути всі замовлення <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
