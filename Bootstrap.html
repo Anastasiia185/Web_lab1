@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPanel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .sidebar {
+            transition: left 0.3s ease;
+        }
+     
+        @media (max-width: 990.98px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                z-index: 1050;
+                width: 280px;
+                height: 100vh;
+                overflow-y: auto;
+                background-color: white !important;
+            }
+            .sidebar.show {
+                left: 0;
+            }
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 1040;
+                display: none;
+            }
+            .sidebar-overlay.show {
+                display: block;
+            }
+            .dashboard-toggle-btn {
+                display: inline-flex !important;
+            }
+        }
+        
+        @media (min-width: 990px) {
+            .dashboard-toggle-btn {
+                display: none !important;
+            }
+            .sidebar-overlay {
+                display: none !important;
+            }
+        }
+        
+        .dashboard-toggle-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand">Sushi Bar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#slider">Головна</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Послуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#dashboard">Дашборд</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <section id="slider" class="pt-5 mt-4">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/sushibar1.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="images/khong.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/large_0.jpeg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    </section>
+
+    <section id="services" class="container py-5">
+    <h2 class="text-center mb-4">Наші послуги</h2>
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Веб-розробка</h5>
+                    <p class="card-text">Створення сучасних адаптивних сайтів.</p>
+                    <a href="#" class="btn btn-primary">Замовити</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">SEO Оптимізація</h5>
+                    <p class="card-text">Просування вашого бізнесу у пошукових системах.</p>
+                    <a href="#" class="btn btn-primary">Замовити</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">UX/UI Дизайн</h5>
+                    <p class="card-text">Проєктування зручних користувацьких інтерфейсів.</p>
+                    <a href="#" class="btn btn-primary">Замовити</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="dashboard" class="bg-light py-5">
+        <div class="container-fluid">
+            <div class="row g-0">
+                <div class="sidebar col-lg-3 col-xl-2 bg-white border-end p-3" id="sidebarMenu">
+                    <div class="d-flex align-items-center mb-4 pt-2">
+                        <i class="fas fa-chart-line fs-3 text-primary me-2"></i>
+                        <span class="fs-5 fw-semibold">AdminPanel</span>
+                    </div>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active bg-primary text-white">
+                                <i class="fas fa-tachometer-alt me-2"></i> Головна
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-chart-simple me-2"></i> Статистика
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-box me-2"></i> Замовлення
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-users me-2"></i> Користувачі
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-cog me-2"></i> Налаштування
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="small text-muted">
+                        <i class="fas fa-circle-user me-1"></i> admin@example.com
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-xl-10 p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-primary dashboard-toggle-btn" id="sidebarToggleBtn">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <h3 class="mb-0">Панель керування</h3>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="card bg-primary bg-opacity-10 h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-primary mb-1">Загальний дохід</h6>
+                                            <h3 class="mb-0">34 250 ₴</h3>
+                                            <small class="text-success">▲ +12.5%</small>
+                                        </div>
+                                        <i class="fas fa-dollar-sign fs-1 text-primary opacity-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="card bg-success bg-opacity-10 h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-success mb-1">Замовлення</h6>
+                                            <h3 class="mb-0">156</h3>
+                                            <small class="text-muted">за місяць</small>
+                                        </div>
+                                        <i class="fas fa-shopping-cart fs-1 text-success opacity-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="card bg-warning bg-opacity-10 h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-warning mb-1">Клієнти</h6>
+                                            <h3 class="mb-0">1 283</h3>
+                                            <small class="text-success">▲ +23 нових</small>
+                                        </div>
+                                        <i class="fas fa-users fs-1 text-warning opacity-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="card bg-info bg-opacity-10 h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-info mb-1">Перегляди</h6>
+                                            <h3 class="mb-0">8 942</h3>
+                                            <small class="text-success">▲ +5.2%</small>
+                                        </div>
+                                        <i class="fas fa-eye fs-1 text-info opacity-50"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-white pt-4 pb-0 px-4">
+                            <h5><i class="fas fa-truck-fast me-2 text-primary"></i>Останні замовлення</h5>
+                            <p class="text-muted small">Актуальні замовлення за останній тиждень</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive p-3">
+                                <table class="table table-hover">
+                                    <thead class="table-light">
+                                        <tr><th>ID</th><th>Клієнт</th><th>Сума</th><th>Статус</th><th>Дата</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>#ORD-1001</td><td>Олена Коваленко</td><td>2 500 ₴</td><td><span class="badge bg-success">Виконано</span></td><td>2025-05-02</td></tr>
+                                        <tr><td>#ORD-1002</td><td>Андрій Шевченко</td><td>1 280 ₴</td><td><span class="badge bg-warning">В обробці</span></td><td>2025-05-02</td></tr>
+                                        <tr><td>#ORD-1003</td><td>Марія Іваненко</td><td>4 799 ₴</td><td><span class="badge bg-success">Виконано</span></td><td>2025-05-01</td></tr>
+                                        <tr><td>#ORD-1004</td><td>Володимир Петренко</td><td>990 ₴</td><td><span class="badge bg-danger">Скасовано</span></td><td>2025-04-30</td></tr>
+                                        <tr><td>#ORD-1005</td><td>Оксана Гнатюк</td><td>3 250 ₴</td><td><span class="badge bg-info">Доставка</span></td><td>2025-04-30</td></tr>
+                                        <tr><td>#ORD-1006</td><td>Ігор Мельник</td><td>5 600 ₴</td><td><span class="badge bg-success">Виконано</span></td><td>2025-04-29</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-end">
+                          <a href="#" class="btn btn-sm btn-outline-primary">Всі замовлення →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Зв'яжіться з нами</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nameInput" class="form-label">Ваше ім'я</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Іван Іванов">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email адреса</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageTextarea" class="form-label">Повідомлення</label>
+                            <textarea class="form-control" id="messageTextarea" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Відправити</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const toggleBtn = document.getElementById('sidebarToggleBtn');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            if (!sidebar || !toggleBtn) return;
+
+            function openSidebar() {
+                sidebar.classList.add('show');
+                if (overlay) overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                if (overlay) overlay.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+
+            toggleBtn.addEventListener('click', openSidebar);
+
+            if (overlay) {
+                overlay.addEventListener('click', closeSidebar);
+            }
+
+            const sidebarLinks = sidebar.querySelectorAll('.nav-link');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 990) {
+                        closeSidebar();
+                    }
+                });
+            });
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 990) {
+                    closeSidebar();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

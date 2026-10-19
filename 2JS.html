@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript (DOM) та Асинхронність</title>
+    <link rel="stylesheet" href="css/js.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript в браузері (DOM) та Асинхронність</h1>
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="tab2">Основа<br><small>Todo List</small></button>
+            <button class="tab-btn" data-tab="tab1">Завдання 3<br><small>Нотатки</small></button>
+            <button class="tab-btn" data-tab="tab3">Завдання 6<br><small>Пошук рецептів</small></button>
+            <button class="tab-btn" data-tab="tab4">Завдання 12<br><small>Pomodoro</small></button>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <div class="task-header">
+                <h3>Todo List</h3>
+                <p>Клік на завдання - позначити виконаним, кнопка "Видалити" - видалити</p>
+            </div>
+            <div class="todo-app">
+                <form id="todo-form">
+                    <input type="text" id="task-input" placeholder="Що потрібно зробити?" required>
+                    <button type="submit">➕ Додати</button>
+                </form>
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <div class="task-header">
+                <h3>Додаток для нотаток (Local Storage)</h3>
+                <p>Створюйте нотатки, вони зберігаються навіть після перезавантаження сторінки</p>
+            </div>
+            <div class="notes-app">
+                <div class="notes-form">
+                    <textarea id="note-input" placeholder="Введіть текст нотатки..." rows="3"></textarea>
+                    <button id="add-note-btn">➕ Додати нотатку</button>
+                </div>
+                <div id="notes-list" class="notes-list">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <div class="task-header">
+                <h3>Пошук рецептів страв</h3>
+                <p>Введіть інгредієнт (наприклад: chicken, tomato, cheese) для пошуку рецептів через TheMealDB API</p>
+            </div>
+            <div class="recipes-app">
+                <div class="search-form">
+                    <input type="text" id="ingredient-input" placeholder="Введіть інгредієнт... (chicken, tomato, cheese)">
+                    <button id="search-btn">🔍 Знайти рецепти</button>
+                </div>
+                <div id="recipes-result" class="recipes-grid">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tab4" class="tab-content">
+            <div class="task-header">
+                <h3>Таймер Pomodoro</h3>
+                <p>Таймер для техніки Pomodoro (25 хвилин роботи)</p>
+            </div>
+            <div class="pomodoro-app">
+                <div class="timer-display">
+                    <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="timer-start">▶ Старт</button>
+                    <button id="timer-pause">⏸ Пауза</button>
+                    <button id="timer-reset">🔄 Скидання</button>
+                </div>
+                <div id="timer-message" class="timer-message"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/2script.js"></script>
+</body>
+</html>

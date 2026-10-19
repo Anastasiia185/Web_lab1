@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Студентський портал</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div style="width: 100%; max-width: 700px; margin: 0 auto;">
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Реєстрація</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Вхід</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Профіль</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active">Відгуки</a></li>
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Магазин</a></li>
+            </ul>
+        </nav>
+
+        <div class="alerts-section">
+            <h3>Сповіщення</h3>
+            <div class="alert alert-success">
+                <div class="alert-content">
+                    <div class="alert-title">Успіх!</div>
+                    <div class="alert-message">Ваш профіль успішно оновлено.</div>
+                </div>
+                <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+            <div class="alert alert-warning">
+                <div class="alert-content">
+                    <div class="alert-title">Увага!</div>
+                    <div class="alert-message">Ваша сесія закінчиться через 5 хвилин.</div>
+                </div>
+                <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+            <div class="alert alert-error">
+                <div class="alert-content">
+                    <div class="alert-title">Помилка!</div>
+                    <div class="alert-message">Не вдалося підключитися до сервера.</div>
+                </div>
+                <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+        </div>
+
+        <div class="reviews-section">
+            <h3>Відгуки студентів</h3>
+            <div class="review-item">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Аватар" class="avatar" onerror="this.src='https://via.placeholder.com/60'">
+                    <div class="review-info">
+                        <div class="review-name">Андрій Коваленко</div>
+                        <div class="review-date">15 березня 2026</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Дуже зручний портал! Всі форми працюють чітко, дизайн приємний. Особливо подобається можливість швидко редагувати профіль.
+                </div>
+            </div>
+            <div class="review-item">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Аватар" class="avatar" onerror="this.src='https://via.placeholder.com/60'">
+                    <div class="review-info">
+                        <div class="review-name">Марія Шевченко</div>
+                        <div class="review-date">10 березня 2026</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Чудова платформа для навчання. Рекомендую всім студентам! Єдине, хотілося б більше тем для оформлення.
+                </div>
+            </div>
+            <div class="review-item">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Аватар" class="avatar" onerror="this.src='https://via.placeholder.com/60'">
+                    <div class="review-info">
+                        <div class="review-name">Олег Петренко</div>
+                        <div class="review-date">5 березня 2026</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Все супер! Реєстрація зайняла 2 хвилини. Дякую розробникам за якісний продукт.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.alert-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.remove();
+            });
+        });
+    </script>
+</body>
+</html>

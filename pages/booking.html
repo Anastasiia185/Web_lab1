@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронювання готелю</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        div {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Бронювання готелю</h1>
+        <nav>
+            <ul>
+                <li><a href="../main.html">Головна</a></li>
+                <li><a href="about.html">Про кафедру</a></li>
+                <li><a href="booking.html">Бронювання</a></li>
+                <li><a href="visa-application.html">Віза-анкета</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Бронювання готельного номера</h2>
+        <form action="/booking" method="POST">
+            <div>
+                <label for="checkin">Дата заїзду:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div>
+                <label for="checkout">Дата виїзду:</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div>
+                <label for="guests">Кількість гостей:</label>
+                <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
+            </div>
+            <div>
+                <label for="room">Тип номера:</label>
+                <select id="room" name="room" required>
+                    <option value="">-- Оберіть тип номера --</option>
+                    <option value="standard">Стандартний</option>
+                    <option value="comfort">Комфорт</option>
+                    <option value="suite">Люкс</option>
+                    <option value="family">Сімейний</option>
+                </select>
+            </div>
+            <div>
+                <input type="checkbox" id="transfer" name="transfer">
+                <label for="transfer">Потребую трансфер з аеропорту</label>
+            </div>
+            <div>
+                <button type="submit">Забронювати</button>
+                <button type="reset">Очистити</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Кафедра інформаційних технологій</p>
+    </footer>
+</body>
+</html>
