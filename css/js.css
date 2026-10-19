@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+h1 {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 25px;
+    font-size: 24px;
+}
+
+h2 {
+    background: #34495e;
+    color: #ecf0f1;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.nav-tabs {
+    display: flex;
+    background: #ecf0f1;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #7f8c8d;
+}
+
+.tab-btn:hover {
+    background: #d5dbdb;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #3498db;
+    border-bottom: 3px solid #3498db;
+}
+
+.tab-content {
+    display: none;
+    padding: 25px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.task-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.task-header h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.task-header p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/*Основне*/
+.todo-app form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-app input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.todo-app button {
+    padding: 12px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.todo-app button:hover {
+    background: #2980b9;
+}
+
+#task-list {
+    list-style: none;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#task-list li:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+#task-list li button {
+    background: #e74c3c;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+#task-list li button:hover {
+    background: #c0392b;
+}
+
+/*3*/
+.notes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#note-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#add-note-btn {
+    padding: 10px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-note-btn:hover {
+    background: #219a52;
+}
+
+.notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.note-card {
+    background: #fff3cd;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    border-left: 5px solid #ffc107;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.note-card p {
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    color: #856404;
+}
+
+.note-card button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.note-card button:hover {
+    background: #c82333;
+}
+
+/*6*/
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#ingredient-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#search-btn {
+    padding: 12px 25px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#search-btn:hover {
+    background: #d35400;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recipe-card h4 {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #e74c3c;
+    background: #fadbd8;
+    border-radius: 8px;
+}
+
+/*12*/
+.pomodoro-app {
+    text-align: center;
+    padding: 20px;
+}
+
+.timer-display {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: monospace;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.timer-controls button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+#timer-start {
+    background: #27ae60;
+    color: white;
+}
+
+#timer-start:hover {
+    background: #219a52;
+}
+
+#timer-pause {
+    background: #f39c12;
+    color: white;
+}
+
+#timer-pause:hover {
+    background: #e67e22;
+}
+
+#timer-reset {
+    background: #e74c3c;
+    color: white;
+}
+
+#timer-reset:hover {
+    background: #c0392b;
+}
+
+.timer-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .tab-btn {
+        font-size: 11px;
+        padding: 10px;
+    }
+    
+    .timer-display {
+        font-size: 50px;
+        padding: 20px;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
